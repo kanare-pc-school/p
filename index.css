@@ -32,6 +32,10 @@ body {
     justify-content: center;
 }
 
+#header>.left>input {
+    margin: 0 1rem;
+}
+
 #header>.center {
     display: flex;
     align-items: center;
@@ -114,6 +118,10 @@ body {
 
 .char {
     margin: 1.5rem 0.75rem;
+}
+
+.char.hide {
+    display: none!important;
 }
 
 .tooltip {
