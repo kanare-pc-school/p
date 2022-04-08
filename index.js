@@ -1,5 +1,13 @@
 const socket = io()
 
+$(window).on('load', () => {
+    socket.emit('init')
+})
+
+socket.on('settings', (ip) => {
+    document.title = ip
+})
+
 $('#msg').on('keypress', (e) => {
     if (e.code === 'Enter' && $('#msg').val() !== '' && $('#user').val() !== '') {
         socket.emit('sendMsg', $('#user').val(), $('#msg').val())
@@ -22,7 +30,6 @@ socket.on('receiveMsg', (user, msg) => {
         const tag = '<div class="char animate__animated animate__bounceInDown tooltip">' + msg + '<span class="tooltip-text" style="background-color: ' + getColor(user) + '">' + user + '</span></div>'
         $('#show').append(tag)
     }
-
 })
 
 $('#user').on('input', (e) => {

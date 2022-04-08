@@ -1,5 +1,13 @@
 const socket = io()
 
+$(window).on('load', () => {
+    socket.emit('init')
+})
+
+socket.on('settings', (ip) => {
+    document.title = ip
+})
+
 $('#msg').on('keypress', (e) => {
     if (e.code === 'Enter' && $('#msg').val() !== '' && $('#user').val() !== '') {
         socket.emit('sendMsg', $('#user').val(), $('#msg').val())
