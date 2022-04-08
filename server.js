@@ -6,7 +6,7 @@ const app = express()
 const server = http.Server(app)
 const io = sokectio(server)
 
-app.use(express.static(__dirname))
+app.use(express.static(__dirname, { extensions: ['html'] }))
 
 io.on('connection', (socket) => {
     socket.on('sendMsg', (user, msg) => {

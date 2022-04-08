@@ -15,14 +15,27 @@ $('#send').on('click', (_e) => {
 })
 
 socket.on('receiveMsg', (user, msg) => {
-    const tag = '<div class="char animate__animated animate__bounceInDown tooltip">' + msg + '<span class="tooltip-text">' + user + '</span></div>'
-    $('#show').append(tag)
+    const users = $('#show .line[data-user="' + user + '"]').get()
+
+    if (users.length === 0) {
+        const tag = '<div class="line" data-user="' + user + '"><img src="https://avatars.dicebear.com/api/pixel-art/' + user + '.svg"><div class="u">' + user + '</div><div class="msg"></div>'
+        $('#show').append(tag)
+    } else {
+        $(users[0]).find('.msg').append(msg)
+    }
 })
 
 $('#user').on('input', (e) => {
     $('#header>.center>img').attr('src', 'https://avatars.dicebear.com/api/pixel-art/' + $(e.currentTarget).val() + '.svg')
 })
 
+$('#user').on('keypress', (e) => {
+    if (e.code === 'Enter' && $('#user').val() !== '') {
+        socket.emit('sendMsg', $('#user').val(), $('#msg').val())
+        $('#msg').val('')
+    }
+})
+
 $('#trash').on('click', (_e) => {
-    $('#show').empty()
+    $('#show .line .msg').empty()
 })
