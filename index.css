@@ -71,7 +71,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin: 0 3rem;
 }
 
 #footter {
@@ -112,7 +113,7 @@ body {
 }
 
 .char {
-    margin: 0.75rem;
+    margin: 1.5rem 0.75rem;
 }
 
 .tooltip {

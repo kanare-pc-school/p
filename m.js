@@ -21,7 +21,7 @@ socket.on('receiveMsg', (user, msg) => {
         const tag = '<div class="line" data-user="' + user + '"><img src="https://avatars.dicebear.com/api/pixel-art/' + user + '.svg"><div class="u">' + user + '</div><div class="msg"></div>'
         $('#show').append(tag)
     } else {
-        $(users[0]).find('.msg').append(msg)
+        $(users[0]).find('.msg').append('<div class="animate__animated animate__slideInDown">' + msg + '</div>')
     }
 })
 
