@@ -9,8 +9,8 @@ const io = sokectio(server)
 app.use(express.static(__dirname))
 
 io.on('connection', (socket) => {
-    socket.on('sendMsg', (msg) => {
-        io.emit('receiveMsg', msg)
+    socket.on('sendMsg', (user, msg) => {
+        io.emit('receiveMsg', user, msg)
     })
 })
 
