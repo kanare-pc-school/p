@@ -15,7 +15,17 @@ io.on('connection', (socket) => {
         io.emit('settings', ip.address())
     })
     socket.on('sendMsg', (user, msg) => {
+        msg = msg === null ? '' : msg
         io.emit('receiveMsg', user, msg)
+    })
+    socket.on('sendFlg', (flg) => {
+        io.emit('receiveFlg', flg)
+    })
+    socket.on('sendTrash', () => {
+        io.emit('receiveTrash')
+    })
+    socket.on('sendCircle', (user) => {
+        io.emit('receiveCircle', user)
     })
 })
 

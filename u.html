@@ -4,13 +4,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./common.css">
-    <link rel="stylesheet" href="./m.css">
+    <link rel="stylesheet" href="./u.css">
 </head>
 
 <body>
     <div class="container">
         <div id="header">
-            <div class="left"></div>
+            <div class="left"><input id="admin" type="checkbox" /><label for="admin">ユーザ</label></div>
             <div class="center">
                 <img src="./nothing.png">
                 <input id="user" type="text" placeholder="名前を入力して下さい" maxlength="10">
@@ -22,15 +22,17 @@
         </div>
         <div id="show"></div>
         <div id="footer" class="hide">
-            <input id="msg" type="text" placeholder="Enterで送信" maxlength="200">
-            <button id="send">送信</button>
+            <div class="a">ア</div>
+            <div class="i">イ</div>
+            <div class="u">ウ</div>
+            <div class="e">エ</div>
         </div>
     </div>
-    <a href="./" class="arrow-left"><i class="fa-solid fa-circle-arrow-left"></i></a>
-    <a href="./u" class="arrow-right"><i class="fa-solid fa-circle-arrow-right"></i></a>
+    <a href="./m" class="arrow-left"><i class="fa-solid fa-circle-arrow-left"></i></a>
+    <a href="./" class="arrow-right"><i class="fa-solid fa-circle-arrow-right"></i></a>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="./m.js"></script>
+    <script src="./u.js"></script>
 </body>
 
 </html>
