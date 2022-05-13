@@ -4,7 +4,7 @@ $('#footer .btn').on('click', (e) => {
 })
 
 socket.on('RECIEVE_MESSAGE', (user, msg) => {
-    if (user === '') return
+    if (user === '' || user === 'admin') return
     const users = $('#show .box[data-user="' + user + '"]').get()
 
     if (users.length === 0) {

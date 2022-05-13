@@ -3,6 +3,16 @@ const socket = io()
 $(window).on('load', () => {
     socket.emit('GET_IP_ADDR')
     $('#header .user').val('')
+    const userId = localStorage.getItem('userId')
+    if (!userId) return
+    $('#header .user').val(userId)
+    $('#header .user').trigger('input')
+    $('#header .send').trigger('click')
+})
+
+$('#header .center img, #header .center span').on('click', (e) => {
+    localStorage.removeItem('userId')
+    location.reload()
 })
 
 socket.on('RECIEVE_IP_ADDR', (ip) => {
@@ -23,6 +33,7 @@ $('#header .user').on('keypress', (e) => {
     $('#footer .msg').val('')
     $('#footer .msg').focus()
     socket.emit('SEND_MESSAGE', $('#header .user').val(), $('#msg').val())
+    localStorage.setItem('userId', $('#header .user').val())
 })
 
 $('#header .send').on('click', (_e) => {
@@ -34,6 +45,7 @@ $('#header .send').on('click', (_e) => {
     $('#footer .msg').val('')
     $('#footer .msg').focus()
     socket.emit('SEND_MESSAGE', $('#header .user').val(), $('#msg').val())
+    localStorage.setItem('userId', $('#header .user').val())
 })
 
 $('#header .trash').on('click', (_e) => {
