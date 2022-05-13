@@ -1,14 +1,13 @@
-#show {
+#show .msg {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    margin: 0 3rem;
+    margin: 0 5rem;
 }
 
 #footer {
-    bottom: 0;
     height: 80px;
 }
 
@@ -16,8 +15,8 @@
     margin: 1.5rem 0.75rem;
 }
 
-.char.hide {
-    display: none!important;
+.text.hide {
+    visibility: hidden!important;
 }
 
 .tooltip {

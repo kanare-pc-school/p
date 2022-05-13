@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>パソコン教室</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" type="image/png" href="/images/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/images/icon-192x192.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="left">
+                <input id="btn" type="checkbox" /><label for="btn">表示中</label>
+            </div>
+            <div class="center">
+                <img src="/images/nothing.png">
+                <input class="user" type="text" placeholder="名前を入力して下さい" maxlength="10">
+                <button class="send">決定</button>
+                <span></span>
+            </div>
+            <div class="right">
+                <img class="trash" src="/images/trash.png">
+            </div>
+        </div>
+        <div id="show"></div>
+        <div id="footer" class="hide">
+            <input class="msg" type="text" placeholder="Enterで送信" maxlength="200">
+            <button class="send">送信</button>
+        </div>
+        <a href="./u" class="arrow-left"><i class="fa-solid fa-circle-arrow-left"></i></a>
+        <a href="./m" class="arrow-right"><i class="fa-solid fa-circle-arrow-right"></i></a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./common.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

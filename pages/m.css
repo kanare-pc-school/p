@@ -1,23 +1,18 @@
 #show {
-    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: stretch;
-    width: 85%;
-    height: 80%;
-    overflow-y: auto;
 }
 
 #footer {
-    bottom: 0;
     height: 80px;
 }
 
 .line {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0 0 1rem 0;
     margin: 1rem 0;
     border-bottom: 1px dashed #ccc;
@@ -31,7 +26,8 @@
 
 .line>.u {
     font-size: 1.75rem;
-    width: 240px;
+    max-width: 240px;
+    width: 20%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
