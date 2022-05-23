@@ -84,8 +84,10 @@ button {
 }
 
 #header>.center.hide,
-#header>.center>input.hide,
-#header>.center>button.hide {
+#header>.center>img.hide,
+#header>.center>span.hide,
+#header>.center>.user.hide,
+#header>.center>.send.hide {
     display: none!important;
 }
 

@@ -27,6 +27,9 @@ io.on('connection', (socket) => {
     socket.on('SEND_CIRCLE', (user) => {
         io.emit('RECIEVE_CIRCLE', user)
     })
+    socket.on('SEND_QUESTION', (user) => {
+        io.emit('RECIEVE_QUESTION', user)
+    })
 })
 
 server.listen(8080, () => {
